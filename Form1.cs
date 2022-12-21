@@ -48,6 +48,7 @@ namespace ResumeApplication
 
         private void metroSetButton1_Click(object sender, EventArgs e)
         {
+            //Sec
             encrypt();
             metroSetTextBox1.ReadOnly = true;
         }
