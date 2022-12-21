@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 // This code pulled from:
 // https://www.c-sharpcorner.com/article/encryption-and-decryption-using-a-symmetric-key-in-c-sharp/
-namespace ResumeApplication
+
+namespace InventoryManagementsSystem
 {
     class Encryption
     {

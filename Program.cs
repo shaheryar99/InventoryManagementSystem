@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ResumeApplication
+namespace InventoryManagementsSystem
 {
     static class Program
     {
@@ -16,7 +16,8 @@ namespace ResumeApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            //Application.Run(new mainForm());
+            Application.Run(new db_main());
         }
     }
 }

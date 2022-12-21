@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ResumeApplication
+namespace InventoryManagementsSystem
 {
     public partial class mainForm : MetroSetForm
     {
