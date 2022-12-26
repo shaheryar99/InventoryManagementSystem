@@ -34,7 +34,7 @@ namespace InventoryManagementsSystem
 
         private void database_Load(object sender, EventArgs e)
         {
-
+            server_text.Text = "Enter Server";
         }
 
         private void user_text_Enter(object sender, EventArgs e)

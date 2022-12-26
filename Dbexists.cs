@@ -39,5 +39,12 @@ namespace InventoryManagementsSystem
             }
 
         }
+
+        private void metroSetButton1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Form dbmain = new db_main();
+            dbmain.ShowDialog();
+        }
     }
 }
