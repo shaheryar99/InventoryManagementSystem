@@ -40,6 +40,8 @@
             this.db_text = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetLabel5 = new MetroSet_UI.Controls.MetroSetLabel();
             this.connect_btn = new MetroSet_UI.Controls.MetroSetButton();
+            this.fname_text = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.SuspendLayout();
             // 
             // styleManager1
@@ -281,7 +283,7 @@
             this.connect_btn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.connect_btn.HoverTextColor = System.Drawing.Color.White;
             this.connect_btn.IsDerivedStyle = true;
-            this.connect_btn.Location = new System.Drawing.Point(88, 312);
+            this.connect_btn.Location = new System.Drawing.Point(100, 350);
             this.connect_btn.Name = "connect_btn";
             this.connect_btn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.connect_btn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -298,12 +300,59 @@
             this.connect_btn.ThemeName = "MetroDark";
             this.connect_btn.Click += new System.EventHandler(this.connect_btn_Click);
             // 
+            // fname_text
+            // 
+            this.fname_text.AutoCompleteCustomSource = null;
+            this.fname_text.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.fname_text.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.fname_text.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.fname_text.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.fname_text.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.fname_text.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.fname_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.fname_text.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.fname_text.Image = null;
+            this.fname_text.IsDerivedStyle = true;
+            this.fname_text.Lines = null;
+            this.fname_text.Location = new System.Drawing.Point(121, 297);
+            this.fname_text.MaxLength = 32767;
+            this.fname_text.Multiline = false;
+            this.fname_text.Name = "fname_text";
+            this.fname_text.ReadOnly = false;
+            this.fname_text.Size = new System.Drawing.Size(236, 28);
+            this.fname_text.Style = MetroSet_UI.Enums.Style.Dark;
+            this.fname_text.StyleManager = this.styleManager1;
+            this.fname_text.TabIndex = 12;
+            this.fname_text.Text = "Enter a Friendly Name";
+            this.fname_text.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.fname_text.ThemeAuthor = "Narwin";
+            this.fname_text.ThemeName = "MetroDark";
+            this.fname_text.UseSystemPasswordChar = false;
+            this.fname_text.WatermarkText = "";
+            this.fname_text.Enter += new System.EventHandler(this.metroSetTextBox1_Enter);
+            // 
+            // metroSetLabel1
+            // 
+            this.metroSetLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetLabel1.IsDerivedStyle = true;
+            this.metroSetLabel1.Location = new System.Drawing.Point(6, 306);
+            this.metroSetLabel1.Name = "metroSetLabel1";
+            this.metroSetLabel1.Size = new System.Drawing.Size(110, 19);
+            this.metroSetLabel1.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel1.StyleManager = this.styleManager1;
+            this.metroSetLabel1.TabIndex = 11;
+            this.metroSetLabel1.Text = "Friendly Name:";
+            this.metroSetLabel1.ThemeAuthor = "Narwin";
+            this.metroSetLabel1.ThemeName = "MetroDark";
+            // 
             // db_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(372, 376);
+            this.ClientSize = new System.Drawing.Size(372, 408);
+            this.Controls.Add(this.fname_text);
+            this.Controls.Add(this.metroSetLabel1);
             this.Controls.Add(this.connect_btn);
             this.Controls.Add(this.db_text);
             this.Controls.Add(this.metroSetLabel5);
@@ -340,5 +389,7 @@
         private MetroSet_UI.Controls.MetroSetTextBox db_text;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel5;
         private MetroSet_UI.Controls.MetroSetButton connect_btn;
+        private MetroSet_UI.Controls.MetroSetTextBox fname_text;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
     }
 }

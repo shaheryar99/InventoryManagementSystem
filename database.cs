@@ -19,10 +19,12 @@ namespace InventoryManagementsSystem
         private string username;
         private string password;
         private string dbname;
+        private string friendly_name;
         private bool firstTime1 = true;
         private bool firstTime2 = true;
         private bool firstTime3 = true;
         private bool firstTime4 = true;
+        private bool firstTime5 = true;
         private static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
 
         public db_main()
@@ -53,12 +55,10 @@ namespace InventoryManagementsSystem
             }
 
              firstTime2 = false;
-            
         }
 
         private void pass_text_Enter(object sender, EventArgs e)
         {
-
             if (firstTime3 == true)
             {
                 pass_text.Text = String.Empty;
@@ -69,7 +69,6 @@ namespace InventoryManagementsSystem
 
         private void db_text_Enter(object sender, EventArgs e)
         {
-
             if (firstTime4 == true)
             {
                 db_text.Text = String.Empty;
@@ -80,23 +79,69 @@ namespace InventoryManagementsSystem
 
         private void connect_btn_Click(object sender, EventArgs e)
         {
+            int error = 0;
             this.server = server_text.Text;
             this.username = user_text.Text;
             this.password = pass_text.Text;
             this.dbname = db_text.Text;
+            this.friendly_name = fname_text.Text;
 
-            string serverenc = Encryption.EncryptString(encrypt_key, server);
-            string userenc = Encryption.EncryptString(encrypt_key, username);
-            string passenc = Encryption.EncryptString(encrypt_key, password);
-            string dbenc = Encryption.EncryptString(encrypt_key, dbname);
-
-
-            using (StreamWriter write = File.AppendText(@"db_list.txt"))
+            if (server == "Enter Server" || server == String.Empty)
             {
-                string writer = ($"DATABASE LIST: {Environment.NewLine}{serverenc} {Environment.NewLine}{userenc} {Environment.NewLine}{passenc} {Environment.NewLine}{dbenc}");
-                write.WriteLine(writer);
-                write.Close();
+                error_msg("Server");
+                error = 1;
             }
+            if (username == "Enter Username" || username == String.Empty)
+            {
+                error_msg("Username");
+                error = 1;
+            }
+            if (password == "Enter Password" || password == String.Empty)
+            {
+                error_msg("Password");
+                error = 1;
+            }
+            if (dbname == "Enter a DB Name" || dbname == String.Empty)
+            {
+                error_msg("Database Name");
+                error = 1;
+            }
+            if (friendly_name == "Enter a Friendly Name" || friendly_name == String.Empty)
+            {
+                error_msg("Friendly Name");
+                error = 1;
+            }
+
+            if (error != 1)
+            {
+                string serverenc = Encryption.EncryptString(encrypt_key, server);
+                string userenc = Encryption.EncryptString(encrypt_key, username);
+                string passenc = Encryption.EncryptString(encrypt_key, password);
+                string dbenc = Encryption.EncryptString(encrypt_key, dbname);
+
+
+                using (StreamWriter write = File.AppendText(@"db_list.txt"))
+                {
+                    string writer = ($"NEW DATABASE: {Environment.NewLine}{serverenc} {Environment.NewLine}{userenc} {Environment.NewLine}{passenc} {Environment.NewLine}{dbenc} {Environment.NewLine}{friendly_name}");
+                    write.WriteLine(writer);
+                    write.Close();
+                }
+            }
+        }
+
+        private void metroSetTextBox1_Enter(object sender, EventArgs e)
+        {
+            if (firstTime5 == true)
+            {
+                fname_text.Text = String.Empty;
+            }
+
+            firstTime5 = false;
+        }
+
+        private void error_msg(String txt)
+        {
+            MessageBox.Show($"The {txt} field is empty.", "Error");
         }
     }
 }

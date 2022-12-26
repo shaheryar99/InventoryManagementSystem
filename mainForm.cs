@@ -14,7 +14,7 @@ namespace InventoryManagementsSystem
     public partial class mainForm : MetroSetForm
     {
 
-        private static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
+        //private static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
         private string newtext;
 
         public mainForm()
@@ -35,14 +35,14 @@ namespace InventoryManagementsSystem
         private void encrypt()
         {
             this.newtext = metroSetTextBox1.Text;
-            var encryptionString = Encryption.EncryptString(encrypt_key, this.newtext);
-            var decryptString = Encryption.DecryptString(encrypt_key, encryptionString);
+           // var encryptionString = Encryption.EncryptString(encrypt_key, this.newtext);
+           // var decryptString = Encryption.DecryptString(encrypt_key, encryptionString);
 
             metroSetTextBox1.Multiline = true;
             metroSetTextBox1.Text = "";
-            metroSetTextBox1.AppendText($"Encrypted String: {encryptionString}");
+           // metroSetTextBox1.AppendText($"Encrypted String: {encryptionString}");
             metroSetTextBox1.AppendText(Environment.NewLine);
-            metroSetTextBox1.AppendText($"Decrypted String: {decryptString}");
+            //metroSetTextBox1.AppendText($"Decrypted String: {decryptString}");
 
         }
 
