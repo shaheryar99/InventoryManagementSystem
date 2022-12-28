@@ -25,7 +25,7 @@ namespace InventoryManagementsSystem
         private bool firstTime3 = true;
         private bool firstTime4 = true;
         private bool firstTime5 = true;
-        private static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
+        public static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
 
         public db_main()
         {
@@ -114,10 +114,10 @@ namespace InventoryManagementsSystem
 
             if (error != 1)
             {
-                string serverenc = Encryption.EncryptString(encrypt_key, server);
-                string userenc = Encryption.EncryptString(encrypt_key, username);
-                string passenc = Encryption.EncryptString(encrypt_key, password);
-                string dbenc = Encryption.EncryptString(encrypt_key, dbname);
+                string serverenc = Encryption.EncryptString(Globals.encrypt_key, server);
+                string userenc = Encryption.EncryptString(Globals.encrypt_key, username);
+                string passenc = Encryption.EncryptString(Globals.encrypt_key, password);
+                string dbenc = Encryption.EncryptString(Globals.encrypt_key, dbname);  
 
 
                 using (StreamWriter write = File.AppendText(@"db_list.txt"))

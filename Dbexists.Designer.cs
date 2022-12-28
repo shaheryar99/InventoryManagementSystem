@@ -86,6 +86,7 @@ namespace InventoryManagementsSystem
             this.dblist_box.TabIndex = 2;
             this.dblist_box.ThemeAuthor = "Narwin";
             this.dblist_box.ThemeName = "MetroDark";
+            this.dblist_box.SelectionChangeCommitted += new System.EventHandler(this.dblist_box_SelectionChangeCommitted);
             // 
             // metroSetControlBox1
             // 

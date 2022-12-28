@@ -16,8 +16,13 @@ namespace InventoryManagementsSystem
 {
     public partial class Dbexists : MetroSetForm
     {
-        private ArrayList dbList = new ArrayList();
         static readonly string dbfile = @"db_list.txt";
+        private string dbselected;
+        private string[] fulldbList;
+        private string username;
+        private string password;
+        private string server;
+        private string dbvar;
 
         public Dbexists()
         {
@@ -27,15 +32,11 @@ namespace InventoryManagementsSystem
         private void Dbexists_Load(object sender, EventArgs e)
         {
 
-            string [] fulldbList = File.ReadAllLines(dbfile);
+            this.fulldbList = File.ReadAllLines(dbfile);
 
             for(int i = 5; i < fulldbList.Length; i+=6)
             {
-                this.dbList.Add(fulldbList[i]);
-            }
-            for(int i = 0; i < dbList.Count; i++)
-            {
-                dblist_box.Items.Add(dbList[i]);
+                this.dblist_box.Items.Add(fulldbList[i]);
             }
 
         }
@@ -45,6 +46,18 @@ namespace InventoryManagementsSystem
             this.Visible = false;
             Form dbmain = new db_main();
             dbmain.ShowDialog();
+        }
+
+        private void dblist_box_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dbselected = dblist_box.Text;
+            int dbindex = Array.FindIndex(fulldbList, db => db.Contains(dbselected));
+            dbvar = Encryption.DecryptString(Globals.encrypt_key, fulldbList[dbindex - 1]);
+            password = Encryption.DecryptString(Globals.encrypt_key, fulldbList[dbindex - 2]);
+            username = Encryption.DecryptString(Globals.encrypt_key, fulldbList[dbindex - 3]);
+            server = Encryption.DecryptString(Globals.encrypt_key, fulldbList[dbindex - 4]);
+
+            Debug.WriteLine($"Database: {dbvar}, User: {username}, Password: {password}, Server: {server}");
         }
     }
 }
