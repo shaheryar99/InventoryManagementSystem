@@ -16,7 +16,7 @@ namespace InventoryManagementsSystem
 {
     public partial class Dbexists : MetroSetForm
     {
-        static readonly string dbfile = @"db_list.txt";
+        private string dbfile = Globals.dbfile;
         private string dbselected;
         private string[] fulldbList;
         private string username;
@@ -58,6 +58,14 @@ namespace InventoryManagementsSystem
             server = Encryption.DecryptString(Globals.encrypt_key, fulldbList[dbindex - 4]);
 
             Debug.WriteLine($"Database: {dbvar}, User: {username}, Password: {password}, Server: {server}");
+        }
+
+        private void removedb_btn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Form RemoveDB = new RemoveDB();
+            RemoveDB.ShowDialog();
+
         }
     }
 }

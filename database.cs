@@ -25,7 +25,7 @@ namespace InventoryManagementsSystem
         private bool firstTime3 = true;
         private bool firstTime4 = true;
         private bool firstTime5 = true;
-        public static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
+        //public static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
 
         public db_main()
         {
@@ -120,9 +120,9 @@ namespace InventoryManagementsSystem
                 string dbenc = Encryption.EncryptString(Globals.encrypt_key, dbname);  
 
 
-                using (StreamWriter write = File.AppendText(@"db_list.txt"))
+                using (StreamWriter write = File.AppendText(Globals.dbfile))
                 {
-                    string writer = ($"NEW DATABASE: {Environment.NewLine}{serverenc} {Environment.NewLine}{userenc} {Environment.NewLine}{passenc} {Environment.NewLine}{dbenc} {Environment.NewLine}{friendly_name}");
+                    string writer = ($"DATABASE: {Environment.NewLine}{serverenc} {Environment.NewLine}{userenc} {Environment.NewLine}{passenc} {Environment.NewLine}{dbenc} {Environment.NewLine}{friendly_name}");
                     write.WriteLine(writer);
                     write.Close();
                 }

@@ -13,8 +13,6 @@ namespace InventoryManagementsSystem
 {
     public partial class mainForm : MetroSetForm
     {
-
-        //private static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
         private string newtext;
 
         public mainForm()
@@ -28,7 +26,7 @@ namespace InventoryManagementsSystem
             price_Label.ForeColor = Color.White;
             identifier_Label.ForeColor = Color.White;
             quantity_Label.ForeColor = Color.White;
-            description_Label.ForeColor = Color.White;
+            description_Label.ForeColor = Color.White; 
 
         }
 
