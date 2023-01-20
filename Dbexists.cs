@@ -57,7 +57,13 @@ namespace InventoryManagementsSystem
             username = Encryption.DecryptString(Globals.encrypt_key, fulldbList[dbindex - 3]);
             server = Encryption.DecryptString(Globals.encrypt_key, fulldbList[dbindex - 4]);
 
-            Debug.WriteLine($"Database: {dbvar}, User: {username}, Password: {password}, Server: {server}");
+            Globals global = new Globals();
+            global.server = server;
+            global.username = username;
+            global.password = password;
+            global.db_name = dbvar;
+
+            Debug.WriteLine($"Database: {global.db_name}, User: {global.username}, Password: {global.password}, Server: {global.server}");
         }
 
         private void removedb_btn_Click(object sender, EventArgs e)

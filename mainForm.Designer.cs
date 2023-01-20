@@ -30,6 +30,7 @@ namespace InventoryManagementsSystem
         private void InitializeComponent()
         {
             this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
+            this.styleManager1 = new MetroSet_UI.Components.StyleManager();
             this.name_Text = new MetroSet_UI.Controls.MetroSetTextBox();
             this.name_Label = new MetroSet_UI.Controls.MetroSetLabel();
             this.identifier_Label = new MetroSet_UI.Controls.MetroSetLabel();
@@ -41,9 +42,7 @@ namespace InventoryManagementsSystem
             this.description_Label = new MetroSet_UI.Controls.MetroSetLabel();
             this.description_Text = new MetroSet_UI.Controls.MetroSetTextBox();
             this.additem_Button = new MetroSet_UI.Controls.MetroSetButton();
-            this.metroSetButton1 = new MetroSet_UI.Controls.MetroSetButton();
-            this.metroSetTextBox1 = new MetroSet_UI.Controls.MetroSetTextBox();
-            this.styleManager1 = new MetroSet_UI.Components.StyleManager();
+            this.ListViewer = new MetroFramework.Controls.MetroListView();
             this.SuspendLayout();
             // 
             // metroSetControlBox1
@@ -71,6 +70,15 @@ namespace InventoryManagementsSystem
             this.metroSetControlBox1.Text = "metroSetControlBox1";
             this.metroSetControlBox1.ThemeAuthor = "Narwin";
             this.metroSetControlBox1.ThemeName = "MetroDark";
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.CustomTheme = "C:\\Users\\Shaheryar Syed\\AppData\\Roaming\\Microsoft\\Windows\\Templates\\ThemeFile.xml" +
+    "";
+            this.styleManager1.MetroForm = this;
+            this.styleManager1.Style = MetroSet_UI.Enums.Style.Dark;
+            this.styleManager1.ThemeAuthor = "Narwin";
+            this.styleManager1.ThemeName = "MetroDark";
             // 
             // name_Text
             // 
@@ -318,71 +326,20 @@ namespace InventoryManagementsSystem
             this.additem_Button.ThemeAuthor = "Narwin";
             this.additem_Button.ThemeName = "MetroDark";
             // 
-            // metroSetButton1
+            // ListViewer
             // 
-            this.metroSetButton1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetButton1.DisabledForeColor = System.Drawing.Color.Gray;
-            this.metroSetButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetButton1.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.metroSetButton1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.metroSetButton1.HoverTextColor = System.Drawing.Color.White;
-            this.metroSetButton1.IsDerivedStyle = true;
-            this.metroSetButton1.Location = new System.Drawing.Point(326, 532);
-            this.metroSetButton1.Name = "metroSetButton1";
-            this.metroSetButton1.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetButton1.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetButton1.NormalTextColor = System.Drawing.Color.White;
-            this.metroSetButton1.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.metroSetButton1.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.metroSetButton1.PressTextColor = System.Drawing.Color.White;
-            this.metroSetButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroSetButton1.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetButton1.StyleManager = this.styleManager1;
-            this.metroSetButton1.TabIndex = 13;
-            this.metroSetButton1.Text = "metroSetButton1";
-            this.metroSetButton1.ThemeAuthor = "Narwin";
-            this.metroSetButton1.ThemeName = "MetroDark";
-            this.metroSetButton1.Click += new System.EventHandler(this.metroSetButton1_Click);
-            // 
-            // metroSetTextBox1
-            // 
-            this.metroSetTextBox1.AutoCompleteCustomSource = null;
-            this.metroSetTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.metroSetTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.metroSetTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetTextBox1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetTextBox1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetTextBox1.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetTextBox1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetTextBox1.Image = null;
-            this.metroSetTextBox1.IsDerivedStyle = true;
-            this.metroSetTextBox1.Lines = null;
-            this.metroSetTextBox1.Location = new System.Drawing.Point(242, 326);
-            this.metroSetTextBox1.MaxLength = 32767;
-            this.metroSetTextBox1.Multiline = false;
-            this.metroSetTextBox1.Name = "metroSetTextBox1";
-            this.metroSetTextBox1.ReadOnly = false;
-            this.metroSetTextBox1.Size = new System.Drawing.Size(319, 185);
-            this.metroSetTextBox1.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetTextBox1.StyleManager = this.styleManager1;
-            this.metroSetTextBox1.TabIndex = 14;
-            this.metroSetTextBox1.Text = "metroSetTextBox1";
-            this.metroSetTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.metroSetTextBox1.ThemeAuthor = "Narwin";
-            this.metroSetTextBox1.ThemeName = "MetroDark";
-            this.metroSetTextBox1.UseSystemPasswordChar = false;
-            this.metroSetTextBox1.WatermarkText = "";
-            // 
-            // styleManager1
-            // 
-            this.styleManager1.CustomTheme = "C:\\Users\\Shaheryar Syed\\AppData\\Roaming\\Microsoft\\Windows\\Templates\\ThemeFile.xml" +
-    "";
-            this.styleManager1.MetroForm = this;
-            this.styleManager1.Style = MetroSet_UI.Enums.Style.Dark;
-            this.styleManager1.ThemeAuthor = "Narwin";
-            this.styleManager1.ThemeName = "MetroDark";
+            this.ListViewer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.ListViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ListViewer.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ListViewer.FullRowSelect = true;
+            this.ListViewer.Location = new System.Drawing.Point(25, 309);
+            this.ListViewer.Name = "ListViewer";
+            this.ListViewer.OwnerDraw = true;
+            this.ListViewer.Size = new System.Drawing.Size(646, 300);
+            this.ListViewer.TabIndex = 15;
+            this.ListViewer.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ListViewer.UseCompatibleStateImageBehavior = false;
+            this.ListViewer.UseSelectable = true;
             // 
             // mainForm
             // 
@@ -391,8 +348,7 @@ namespace InventoryManagementsSystem
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(703, 624);
-            this.Controls.Add(this.metroSetTextBox1);
-            this.Controls.Add(this.metroSetButton1);
+            this.Controls.Add(this.ListViewer);
             this.Controls.Add(this.additem_Button);
             this.Controls.Add(this.description_Text);
             this.Controls.Add(this.description_Label);
@@ -430,9 +386,8 @@ namespace InventoryManagementsSystem
         private MetroSet_UI.Controls.MetroSetLabel description_Label;
         private MetroSet_UI.Controls.MetroSetTextBox description_Text;
         private MetroSet_UI.Controls.MetroSetButton additem_Button;
-        private MetroSet_UI.Controls.MetroSetButton metroSetButton1;
-        private MetroSet_UI.Controls.MetroSetTextBox metroSetTextBox1;
         private MetroSet_UI.Components.StyleManager styleManager1;
+        private MetroFramework.Controls.MetroListView ListViewer;
     }
 }
 

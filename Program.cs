@@ -16,9 +16,9 @@ namespace InventoryManagementsSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new mainForm());
-            //Application.Run(new db_main());
-            Application.Run(new Dbexists());
+            // Application.Run(new mainForm());
+            Application.Run(new db_main());
+            //Application.Run(new Dbexists());
         }
     }
 }

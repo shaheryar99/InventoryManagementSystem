@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -25,7 +26,6 @@ namespace InventoryManagementsSystem
         private bool firstTime3 = true;
         private bool firstTime4 = true;
         private bool firstTime5 = true;
-        //public static string encrypt_key = "eerj3glTDu6AFI75iyoXI7cjSwAuXri9";
 
         public db_main()
         {
@@ -79,11 +79,16 @@ namespace InventoryManagementsSystem
 
         private void connect_btn_Click(object sender, EventArgs e)
         {
+            Globals global = new Globals();
             int error = 0;
             this.server = server_text.Text;
+            global.server = server;
             this.username = user_text.Text;
+            global.username = username;
             this.password = pass_text.Text;
+            global.password = password;
             this.dbname = db_text.Text;
+            global.db_name = dbname;
             this.friendly_name = fname_text.Text;
 
             if (server == "Enter Server" || server == String.Empty)
@@ -126,6 +131,19 @@ namespace InventoryManagementsSystem
                     write.WriteLine(writer);
                     write.Close();
                 }
+            }
+
+            DBConnection db = new DBConnection();
+            //Debug.WriteLine(db.connector(server, username, password, dbname, "test"));
+            db.connector(server, username, password, dbname, "test");
+            if (db.isConnected == true)
+            {
+
+                this.Visible = false;
+                mainForm main = new mainForm();
+                main.globalUpdater(server, username, password, dbname);
+                main.Visible = true;
+                //main.ShowDialog();
             }
         }
 

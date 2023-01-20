@@ -57,9 +57,20 @@ namespace InventoryManagementsSystem
                 write.Close();
             }
 
-            this.Visible = false;
-            Form Dbexists = new Dbexists();
-            Dbexists.ShowDialog();
+            var file = new FileInfo(Globals.dbfile);
+
+            if (file.Length == 0 || file.Length < 6)
+            {
+                this.Visible = false;
+                Form db_main = new db_main();
+                db_main.ShowDialog();
+            }
+            else
+            {
+                this.Visible = false;
+                Form Dbexists = new Dbexists();
+                Dbexists.ShowDialog();
+            }
         }
     }
 }
